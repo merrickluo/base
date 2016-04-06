@@ -16,3 +16,4 @@ test:
     - docker images -a --digests
     - docker history base:nginx
     - docker history base:shadowsocks
+    - docker ps
