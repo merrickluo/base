@@ -34,7 +34,7 @@ echo "Removing binutils info pages"
 rm -rf binutils-data/*/*/info
 
 # echo "Clearing out log files"
-# for f in $( find /var/log -type f ); do > $f; done
+for f in $( find /var/log -type f ); do > $f; done
 
 echo "Removing config-archive"
 rm -rf /etc/config-archive
