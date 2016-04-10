@@ -1,0 +1,15 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+
+test:
+  override:
+    - docker build -t gentoo ./:
+        timeout: 3600
+    - docker run -d gentoo
+    - docker images -a --digests
+    - docker history gentoo
