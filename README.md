@@ -1,5 +1,7 @@
 # Base Image
 
+[![Circle CI](https://circleci.com/gh/ahxxm/gentoo-base/tree/master.svg?style=svg)](https://circleci.com/gh/ahxxm/gentoo-base/tree/master)
+
 Gentoo-stage 3 has less/more/cat/netstat inside, this adds nc/curl/gentoolkit/vim/emacs(not alphabetically ordered).
 
 ## Build/Update Notes
