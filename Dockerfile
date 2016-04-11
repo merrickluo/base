@@ -6,7 +6,7 @@ COPY cleanup.sh /cleanup.sh
 # Updated package to recommended version, install necessary software for debug..
 RUN emerge --sync --quiet && \
   emerge --update --newuse --deep --quiet-build=y @world && \
-  emerge --quiet --quiet-build=y net-analyzer/netcat net-misc/curl app-portage/gentoolkit
+  emerge --quiet --quiet-build=y net-analyzer/netcat net-misc/curl app-portage/gentoolkit app-arch/unzip
 
 # Post installation config: locale, revdep, clean
 RUN eselect locale set en_US.utf8 && \
