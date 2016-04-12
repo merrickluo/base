@@ -10,6 +10,9 @@ test:
   override:
     - docker build -t gentoo ./:
         timeout: 3600
-    - docker run -d gentoo
+    - cd nginx && docker build -t gentoo:nginx ./:
+        timeout: 3600
+    - docker run -d gentoo:nginx
     - docker images -a --digests
     - docker history gentoo
+    - docker history gentoo:nginx
