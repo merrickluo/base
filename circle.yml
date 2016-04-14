@@ -8,11 +8,8 @@ dependencies:
 
 test:
   override:
-    - docker build -t gentoo ./:
+    - cd nginx && docker build -t base:nginx ./:
         timeout: 3600
-    - cd nginx && docker build -t gentoo:nginx ./:
-        timeout: 3600
-    - docker run -d gentoo:nginx
+    - docker run -d base:nginx
     - docker images -a --digests
-    - docker history gentoo
-    - docker history gentoo:nginx
+    - docker history base:nginx

@@ -2,15 +2,8 @@
 
 [![Circle CI](https://circleci.com/gh/ahxxm/gentoo-base/tree/master.svg?style=svg)](https://circleci.com/gh/ahxxm/gentoo-base/tree/master)
 
-Gentoo-stage 3 has less/more/cat/netstat inside, this adds nc/curl/gentoolkit/vim/emacs/unzip(not alphabetically ordered).
+for personal use.
 
-## Build/Update Notes
+## Structure
 
-Auto builds are in [Docker Hub](https://hub.docker.com/r/ahxxm/gentoo/).
-
-Image that use this base image can be slimmed using [docker-slim](https://github.com/cloudimmunity/docker-slim):
-
-    docker build -t some-image .
-    ./docker-slim build some-image
-
-slimmed image named some-image.slim.
+    `nginx`: with http2 and chacha20.
