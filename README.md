@@ -1,6 +1,6 @@
 # Base Image
 
-[![Circle CI](https://circleci.com/gh/ahxxm/gentoo-base/tree/master.svg?style=svg)](https://circleci.com/gh/ahxxm/gentoo-base/tree/master)
+[![Circle CI](https://circleci.com/gh/ahxxm/base/tree/master.svg?style=svg)](https://circleci.com/gh/ahxxm/base/tree/master)
 
 for personal use.
 
