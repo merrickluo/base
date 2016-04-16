@@ -7,3 +7,4 @@ for personal use.
 ## Structure
 
     `nginx`: with http2 and chacha20.
+    `shadowsocks-libev`: git submodule with production-ready Dockerfile inside. 
