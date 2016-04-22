@@ -4,7 +4,8 @@
 
 for personal use.
 
-## Structure
+List:
 
-    `nginx`: with http2 and chacha20.
-    `shadowsocks-libev`: git submodule with production-ready Dockerfile inside. 
+- `nginx`: with http2 and chacha20.
+
+- `shadowsocks-libev`: latest master, Dockerfile mostly copied from `docker/alpine/Dockerfile` of origin repo.
