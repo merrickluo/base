@@ -18,6 +18,7 @@ RUN set -ex \
     && apk del --purge $SS_DEP \
     && rm -rf /var/cache/apk/* \
     && rm master.zip
+    && rm -r $SS_DIR
 
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 8388
