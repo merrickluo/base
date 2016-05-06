@@ -8,7 +8,7 @@ set -e
 
 NPS_VERSION=1.11.33.1
 NGINX_VERSION=1.9.15
-LIBRESSL_VERSION=2.3.3 # nice shot
+LIBRESSL_VERSION=2.3.4
 
 mkdir -p /tmp
 
