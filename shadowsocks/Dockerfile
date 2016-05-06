@@ -17,7 +17,7 @@ RUN set -ex \
         && rm -rf $SS_DIR \
     && apk del --purge $SS_DEP \
     && rm -rf /var/cache/apk/* \
-    && rm master.zip
+    && rm master.zip \
     && rm -r $SS_DIR
 
 ENV SERVER_ADDR 0.0.0.0
