@@ -21,7 +21,7 @@ sed -i '/#define DEFAULT_CONFIG_ENTRIES /{s/96/200/}' src/vpn.h
 make
 make install
 
-# make etc folder
+# make configuration folder
 mkdir -p /etc/ocserv
 
 # clean
