@@ -1,14 +1,9 @@
 FROM alpine:latest
 
-
 # Optimize for cache
-# COPY init.d.nginx /etc/init.d/nginx
 COPY nginx.sh /nginx.sh
 
-# TODO: init.d?
-# TODO: nginx conf
-
-# Nginx build dependencies
+# Nginx build
 RUN /nginx.sh && \
   rm /nginx.sh
 
