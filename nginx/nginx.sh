@@ -1,11 +1,10 @@
 #!/bin/sh
+set -e
+
 
 # ref:
 # - https://developers.google.com/speed/pagespeed/module/build_ngx_pagespeed_from_source#dependencies
 # - https://www.futures.moe/writings/configure-nginx-with-security-and-effective-yes-or-no.htm
-
-set -e
-
 NPS_VERSION=1.11.33.2
 NGINX_VERSION=1.11.1
 LIBRESSL_VERSION=2.3.6
@@ -28,7 +27,6 @@ curl -fSL http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-${LIBRESSL_VERSIO
 curl -fSL http://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-${LIBRESSL_VERSION}.tar.gz.asc -o libressl-${LIBRESSL_VERSION}.tar.gz.asc
 gpg --batch --verify libressl-${LIBRESSL_VERSION}.tar.gz.asc libressl-${LIBRESSL_VERSION}.tar.gz
 tar -zxf libressl-${LIBRESSL_VERSION}.tar.gz
-
 
 
 # nginx
