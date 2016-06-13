@@ -3,9 +3,7 @@ set -e
 
 
 # ref:
-# - https://developers.google.com/speed/pagespeed/module/build_ngx_pagespeed_from_source#dependencies
 # - https://www.futures.moe/writings/configure-nginx-with-security-and-effective-yes-or-no.htm
-NPS_VERSION=1.11.33.2
 NGINX_VERSION=1.11.1
 LIBRESSL_VERSION=2.3.6
 
