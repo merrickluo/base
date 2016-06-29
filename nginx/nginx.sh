@@ -10,7 +10,7 @@ LIBRESSL_VERSION=2.3.6
 mkdir -p /tmp
 
 # dependencies
-build_dep="curl gnupg build-base pcre-dev zlib-dev linux-headers openssl-dev"
+build_dep="curl gnupg build-base pcre-dev zlib-dev linux-headers openssl-dev asciidoc"
 run_dep="ca-certificates openssl pcre zlib"
 
 apk --no-cache add ${build_dep} ${run_dep}
