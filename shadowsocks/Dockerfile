@@ -2,7 +2,7 @@ FROM alpine:latest
 
 ENV SS_URL https://github.com/shadowsocks/shadowsocks-libev/archive/master.zip
 ENV SS_DIR shadowsocks
-ENV SS_DEP autoconf build-base curl libtool linux-headers openssl-dev unzip
+ENV SS_DEP autoconf build-base curl libtool linux-headers openssl-dev unzip asciidoc xmlto
 
 RUN set -ex \
     && apk add --update $SS_DEP \
