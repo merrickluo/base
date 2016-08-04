@@ -5,7 +5,7 @@ set -e
 # ref:
 # - https://www.futures.moe/writings/configure-nginx-with-security-and-effective-yes-or-no.htm
 NGINX_VERSION=1.11.2
-LIBRESSL_VERSION=2.3.6
+LIBRESSL_VERSION=2.4.2
 
 mkdir -p /tmp
 
