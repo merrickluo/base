@@ -11,9 +11,11 @@ test:
     - cd nginx && docker build -t base:nginx ./:
         timeout: 3600
     - cd shadowsocks && docker build -t base:shadowsocks .
+    - cd ipython && docker build -t base:ipython .
     - docker run -d base:nginx
     - docker run --restart=always -p 11111:8388 -p 11111:8388/udp -e "METHOD=aes-256-cfb" -e "PASSWORD=Arizona" -d base:shadowsocks
     - docker images -a --digests
     - docker history base:nginx
     - docker history base:shadowsocks
+    - docker history base:ipython
     - docker ps
