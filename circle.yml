@@ -6,12 +6,20 @@ dependencies:
   override:
     - docker info:
         parallel: false
-    - cd nginx && docker build -t base:nginx ./:
-        timeout: 3600
-        parallel: true
-    - cd shadowsocks && docker build -t base:shadowsocks .:
-        parallel: true
-    - cd ipython && docker build -t base:ipython .:
+    - ? |
+        set -e
+        case $CIRCLE_NODE_INDEX in
+          0)
+          cd nginx && docker build -t base:nginx ./
+          ;;
+          1)
+          cd shadowsocks && docker build -t base:shadowsocks .
+          ;;
+          2)
+          cd ipython && docker build -t base:ipython .
+          ;;
+        esac
+      :
         parallel: true
 
 test:
