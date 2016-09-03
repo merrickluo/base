@@ -6,13 +6,13 @@ dependencies:
   override:
     - docker info:
         parallel: false
-    - docker build -t:
+    - cd nginx && docker build -t base:nginx ./:
         timeout: 3600
         parallel: true
-        files:
-          base:nginx nginx/
-          base:shadowsocks shadowsocks/
-          base:ipython ipython/
+    - cd shadowsocks && docker build -t base:shadowsocks .:
+        parallel: true
+    - cd ipython && docker build -t base:ipython .:
+        parallel: true
 
 test:
   override:
