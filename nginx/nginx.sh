@@ -50,7 +50,6 @@ cd nginx-${NGINX_VERSION}/
 make -j $(getconf _NPROCESSORS_ONLN)
 make install
 make clean
-cd /
 rm -rf /tmp /root/.gnupg/
 apk del ${build_dep}
 
