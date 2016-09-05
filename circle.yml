@@ -44,4 +44,4 @@ test:
         esac
       :
         parallel: true
-    - docker images -a --digest
+    - docker images -a --digests
