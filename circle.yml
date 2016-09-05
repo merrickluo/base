@@ -23,10 +23,25 @@ dependencies:
 
 test:
   override:
-    - docker run -d base:nginx
-    - docker run --restart=always -p 11111:8388 -p 11111:8388/udp -e "METHOD=chacha20" -e "PASSWORD=Arizona" -d ahxxm/base:shadowsocks
-    - docker images -a --digests
-    - docker history ahxxm/base:nginx
-    - docker history ahxxm/base:shadowsocks
-    - docker history ahxxm/base:ipython
-    - docker ps
+    - ? |
+        set -e
+        case $CIRCLE_NODE_INDEX in
+          0)
+          docker run -d base:nginx
+          docker history base:nginx
+          docker ps -a
+          ;;
+          1)
+          docker history base:shadowsocks
+          docker run --restart=always -p 11111:8388 -p 11111:8388/udp -e "METHOD=chacha20" -e "PASSWORD=Arizona" -d ahxxm/base:shadowsocks
+          docker ps -a
+          ;;
+          2)
+          docker history base:ipython
+          docker run -d base:ipython
+          docker ps -a
+          ;;
+        esac
+      :
+        parallel: true
+    - docker images -a --digest
