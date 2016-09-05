@@ -24,9 +24,9 @@ dependencies:
 test:
   override:
     - docker run -d base:nginx
-    - docker run --restart=always -p 11111:8388 -p 11111:8388/udp -e "METHOD=chacha20" -e "PASSWORD=Arizona" -d base:shadowsocks
+    - docker run --restart=always -p 11111:8388 -p 11111:8388/udp -e "METHOD=chacha20" -e "PASSWORD=Arizona" -d ahxxm/base:shadowsocks
     - docker images -a --digests
-    - docker history base:nginx
-    - docker history base:shadowsocks
-    - docker history base:ipython
+    - docker history ahxxm/base:nginx
+    - docker history ahxxm/base:shadowsocks
+    - docker history ahxxm/base:ipython
     - docker ps
