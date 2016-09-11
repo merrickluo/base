@@ -2,10 +2,11 @@ FROM alpine:latest
 
 ENV SS_URL https://github.com/shadowsocks/shadowsocks-libev/archive/master.zip
 ENV SS_DIR shadowsocks
-ENV SS_DEP autoconf build-base curl libtool linux-headers openssl-dev unzip asciidoc xmlto
+ENV SS_DEP pcre
+ENV BUILD_DEP autoconf build-base curl libtool linux-headers openssl-dev unzip asciidoc xmlto pcre-dev
 
 RUN set -ex \
-    && apk add --update $SS_DEP \
+    && apk add --update $SS_DEP $BUILD_DEP \
     && curl -fSL $SS_URL -o master.zip \
     && unzip master.zip \
     && mv shadowsocks-libev* $SS_DIR \
@@ -15,7 +16,7 @@ RUN set -ex \
         && make install \
         && cd .. \
         && rm -rf $SS_DIR \
-    && apk del --purge $SS_DEP \
+    && apk del --purge $BUILD_DEP \
     && rm -rf /var/cache/apk/* \
     && rm master.zip
 
