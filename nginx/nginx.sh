@@ -43,7 +43,6 @@ cd nginx-${NGINX_VERSION}/
     --with-http_ssl_module \
     --with-http_gunzip_module \
     --with-http_gzip_static_module \
-    --with-ipv6 \
     --with-http_v2_module \
     --with-openssl=/tmp/libressl-${LIBRESSL_VERSION} \
     --with-ld-opt="-lrt"
