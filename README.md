@@ -6,7 +6,7 @@ for personal use.
 
 List:
 
-- `nginx`: with http2 and chacha20.
+- `nginx`: with http2 and chacha20, default user is `www-data`.
 
 - `shadowsocks-libev`: latest master, Dockerfile mostly copied from `docker/alpine/Dockerfile` of origin repo.
 
