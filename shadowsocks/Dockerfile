@@ -11,6 +11,7 @@ RUN set -ex \
     && unzip master.zip \
     && mv shadowsocks-libev* $SS_DIR \
     && cd $SS_DIR \
+        && ./autogen.sh
         && ./configure \
         && make -j8 \
         && make install \
