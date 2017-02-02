@@ -1,25 +1,22 @@
 FROM alpine:latest
 
-ENV SS_URL https://github.com/shadowsocks/shadowsocks-libev/archive/master.zip
-ENV SS_DIR shadowsocks
-ENV SS_DEP pcre openssl-dev
-ENV BUILD_DEP autoconf build-base curl libtool linux-headers unzip asciidoc xmlto pcre-dev
+ENV SS_URL https://github.com/shadowsocks/shadowsocks-libev
+ENV SS_DIR shadowsocks-libev
+ENV SS_DEP pcre openssl-dev libsodium-dev mbedtls-dev udns-dev libev-dev
+ENV BUILD_DEP autoconf automake build-base curl libtool linux-headers unzip asciidoc xmlto pcre-dev git
 
 RUN set -ex \
     && apk add --update $SS_DEP $BUILD_DEP \
-    && curl -fSL $SS_URL -o master.zip \
-    && unzip master.zip \
-    && mv shadowsocks-libev* $SS_DIR \
+    && git clone --recursive --depth=1 $SS_URL \
     && cd $SS_DIR \
-        && ./autogen.sh
+        && ./autogen.sh \
         && ./configure \
         && make -j8 \
         && make install \
         && cd .. \
         && rm -rf $SS_DIR \
     && apk del --purge $BUILD_DEP \
-    && rm -rf /var/cache/apk/* \
-    && rm master.zip
+    && rm -rf /var/cache/apk/*
 
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 8388
