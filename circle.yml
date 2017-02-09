@@ -33,7 +33,7 @@ test:
           ;;
           1)
           docker history base:shadowsocks
-          docker run --restart=always -p 11111:8388 -p 11111:8388/udp -e "METHOD=chacha20" -e "PASSWORD=Arizona" -d ahxxm/base:shadowsocks
+          docker run --restart=always -p 11111:8388 -p 11111:8388/udp -e "METHOD=chacha20" -e "PASSWORD=Arizona" -d base:shadowsocks
           docker ps -a
           ;;
           2)
