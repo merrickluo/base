@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV SS_URL https://github.com/shadowsocks/shadowsocks-libev
+ENV SS_URL https://github.com/merrickluo/shadowsocks-libev
 ENV SS_DIR shadowsocks-libev
 ENV SS_DEP pcre openssl-dev libsodium-dev mbedtls-dev udns-dev libev-dev
 ENV BUILD_DEP autoconf automake build-base curl libtool linux-headers unzip asciidoc xmlto pcre-dev git
